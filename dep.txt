@@ -1,0 +1,19 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building tls-hls-sender 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ tls-hls-sender ---
+[INFO] com.ge.woa.tools:tls-hls-sender:jar:1.0-SNAPSHOT
+[INFO] +- ca.uhn.hapi:hapi-base:jar:2.2:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:1.6.6:compile
+[INFO] +- ca.uhn.hapi:hapi-structures-v26:jar:2.2:compile
+[INFO] \- commons-io:commons-io:jar:2.5:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.226 s
+[INFO] Finished at: 2021-07-22T20:25:26-05:00
+[INFO] Final Memory: 14M/487M
+[INFO] ------------------------------------------------------------------------

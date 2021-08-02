@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!--
+  ~ Copyright (c) 2021. Pravat Panda
+  ~ All rights reserved
+  -->
+
+<GridPane hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="600.0"
+          prefHeight="400.0" prefWidth="800.0" style="-fx-padding: 0 5 10 5;" vgap="10"
+          xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.pravatpanda.tools.hl7sender.fxcontroller.MainController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="5">
+            <children>
+                <Label fx:id="headerLabel" alignment="CENTER" text="Command Center HL7 Sender" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+        <VBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="1" GridPane.rowSpan="4">
+            <children>
+                <TextArea fx:id="hl7Message" prefHeight="200.0" prefWidth="200.0" promptText="Put hl7 message here" GridPane.columnSpan="5" />
+                <HBox alignment="CENTER" prefWidth="100.0" spacing="10">
+                    <children>
+                        <VBox>
+                            <TextField fx:id="hostField" promptText="Host" />
+                            <TextField fx:id="portField" promptText="port" />
+                        </VBox>
+                        <CheckBox fx:id="enableTLS" mnemonicParsing="false" text="Enable TLS"
+                                  onAction="#enableTLSAction"/>
+                        <VBox>
+                            <HBox>
+                            <TextField fx:id="trustStoreFileLocation" disable="true" promptText="Trust Store" />
+                                <Button fx:id="fileChooser" disable="true" text="..." onAction="#chooseFile"/>
+                            </HBox>
+                            <TextField fx:id="trustStorePass" disable="true" promptText="Trust Store Pass" />
+                        </VBox>
+                        <Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendMessage" prefHeight="42.0" prefWidth="117.0" text="Send Message" textAlignment="CENTER" wrapText="true" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="5">
+                    <Label fx:id="response" prefHeight="200.0" text="Response.." GridPane.columnSpan="5" />
+                </HBox>
+            </children>
+        </VBox>
+
+
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="5" GridPane.rowIndex="5">
+            <children>
+                <Label fx:id="footerLabel" alignment="CENTER" text="LABEL" textAlignment="CENTER" />
+                <Label fx:id="footerSubLabel" alignment="CENTER" text="SUBLABEL" textAlignment="CENTER" />
+            </children>
+        </VBox>
+    </children>
+</GridPane>

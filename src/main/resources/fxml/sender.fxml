@@ -24,15 +24,6 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-<!--        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="5">-->
-<!--            <children>-->
-<!--                <Label fx:id="headerLabel" alignment="CENTER" text="Command Center HL7 Sender" textAlignment="CENTER">-->
-<!--                    <font>-->
-<!--                        <Font name="System Bold" size="24.0" />-->
-<!--                    </font>-->
-<!--                </Label>-->
-<!--            </children>-->
-<!--        </VBox>-->
         <VBox prefHeight="100.0" prefWidth="200.0" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="0" GridPane.rowSpan="5">
             <children>
                 <TextArea fx:id="hl7Message" prefHeight="263.0" prefWidth="790.0" promptText="Put hl7 message here" GridPane.columnSpan="5" />

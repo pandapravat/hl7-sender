@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  ~ Copyright (c) 2021. Pravat Panda
+  ~ All rights reserved
+  -->
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TabPane tabClosingPolicy="UNAVAILABLE" >
+            <tabs>
+                <Tab text="TLS Hl7 Sender">
+                    <content>
+                        <fx:include fx:id="sender" source="sender.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="JWT Token Generator">
+                    <content>
+                        <fx:include fx:id="jwtgen" source="jwt-generator-new.fxml" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <VBox GridPane.rowIndex="1" alignment="BOTTOM_CENTER">
+            <padding>
+                <Insets bottom="5"/>
+            </padding>
+            <fx:include fx:id="footer" source="footer.fxml" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.rowIndex="12" GridPane.rowSpan="1" />
+        </VBox>
+
+    </children>
+        <columnConstraints>
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints prefHeight="480"/>
+            <RowConstraints prefHeight="10" />
+        </rowConstraints>
+</GridPane>

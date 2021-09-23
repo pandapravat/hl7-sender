@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!--
+  ~ Copyright (c) 2021. Pravat Panda
+  ~ All rights reserved
+  -->
+
+<GridPane hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+          xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.pravatpanda.tools.hl7sender.fxcontroller.FooterController" alignment="BOTTOM_CENTER" >
+
+    <children>
+
+        <Label fx:id="footerLabel" text="LABEL" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.rowIndex="0" GridPane.rowSpan="1" />
+        <Label fx:id="footerSubLabel" text="SUBLABEL" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.rowIndex="1" GridPane.rowSpan="1"/>
+
+    </children>
+</GridPane>

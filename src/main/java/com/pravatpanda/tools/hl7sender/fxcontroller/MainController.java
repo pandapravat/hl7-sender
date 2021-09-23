@@ -9,12 +9,14 @@ import com.pravatpanda.tools.hl7sender.helper.ConfigurationStore;
 import com.pravatpanda.tools.hl7sender.service.TLSHl7Sender;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -59,8 +61,7 @@ public class MainController {
     /**
      * The constant APP_FOOTER_LABEL.
      */
-    public static final String APP_FOOTER_LABEL = "app.footer.label";
-    public static final String APP_FOOTER_SUBLABEL = "app.footer.sublabel";
+
     private static final String APP_HEADER_LABEL = "app.header.label";
 
     /**
@@ -98,18 +99,17 @@ public class MainController {
     /**
      * The Response.
      */
-    @FXML Label response;
+    @FXML TextArea response;
     /**
      * The Footer label.
      */
-    @FXML Label footerLabel;
+
     @FXML Label headerLabel;
     /**
      * The Footer sub label.
      */
-    @FXML Label footerSubLabel;
+
     private Stage stage;
-    private ConfigurationStore store;
 
 
     /**
@@ -117,9 +117,7 @@ public class MainController {
      */
     @FXML
     public void initialize() {
-        footerLabel.setText(ConfigurationStore.getProperty(APP_FOOTER_LABEL));
-        footerSubLabel.setText(ConfigurationStore.getProperty(APP_FOOTER_SUBLABEL));
-        headerLabel.setText(ConfigurationStore.getProperty(APP_HEADER_LABEL));
+//        headerLabel.setText(ConfigurationStore.getProperty(APP_HEADER_LABEL));
         // load last saved configuration
         File file = new File(FILE);
         if(file.exists()) {
@@ -236,9 +234,9 @@ public class MainController {
 
     private void errorLabel(boolean b) {
         if(b) {
-            response.setTextFill(Color.RED);
+            response.setStyle("-fx-text-fill: red ;");
         } else {
-            response.setTextFill(Color.BLACK);
+            response.setStyle("-fx-text-fill: black ;");
         }
     }
 
@@ -271,29 +269,13 @@ public class MainController {
         fileChooser.setInitialDirectory(
                 new File(System.getProperty("user.home"))
         );
-        File file = fileChooser.showOpenDialog(stage);
+        Window window = ((Node) actionEvent.getSource()).getScene().getWindow();
+        File file = fileChooser.showOpenDialog(window);
         if(null != file) {
             String absolutePath = file.getAbsolutePath();
             trustStoreFileLocation.setText(absolutePath);
         }
     }
 
-    /**
-     * Sets stage.
-     *
-     * @param primaryStage the primary stage
-     */
-    public void setStage(Stage primaryStage) {
-        this.stage = primaryStage;
-    }
-
-    /**
-     * Sets config store.
-     *
-     * @param store the store
-     */
-    public void setConfigStore(ConfigurationStore store ) {
-        this.store = store;
-    }
 
 }

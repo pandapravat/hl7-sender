@@ -30,11 +30,10 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception{
         primaryStage.getIcons()
                 .addAll(new Image(Thread.currentThread().getContextClassLoader().getResourceAsStream("favicon.ico")));
-        FXMLLoader loader = new FXMLLoader(Thread.currentThread().getContextClassLoader().getResource("sender.fxml"));
+        FXMLLoader loader = new FXMLLoader(Thread.currentThread().getContextClassLoader().getResource("fxml/home.fxml"));
         Parent root = loader.load();
-        MainController controller = loader.getController();
         primaryStage.setTitle(ConfigurationStore.getProperty("app.header.label"));
-        primaryStage.setScene(new Scene(root, 700, 600));
+        primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.show();
     }
 
